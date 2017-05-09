@@ -12,7 +12,7 @@ a similar model back when the form is
 successfully submitted.
 The styling is done using Bootstrap 3.
 
-##Setup
+## Setup
 You have to import FormsModule and ReactiveFormsModule and
  put them in the imports part of your @NgModule declaration in app.module.ts.
 ```
