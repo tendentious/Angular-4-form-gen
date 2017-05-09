@@ -4,7 +4,7 @@ Mini Form AngularJS 4 Component
 This component can be used to 
 create simple forms dynamically.
 
-![Alt text](/img/overview.jpg?raw=true "Preview")
+![Alt text](/img/overview.JPG?raw=true "Preview")
 
 It uses the reactive form approach, by passing
 a model for the form generation and receiving
