@@ -1,0 +1,92 @@
+<form [formGroup]="miniFormGroup"
+      (ngSubmit)="miniFormSubmit()"
+      class="form">
+  <div class="form-group" *ngFor="let field of fields">
+    <label [for]="field.name"
+           [ngClass]="{'has-error':
+           field.type == FieldType.Checkbox &&
+           miniFormGroup.controls[field.name].hasError('required') &&
+           miniFormGroup.controls[field.name].touched}"
+           class="control-label">{{field.label|titlecase}}</label>
+
+    <div [ngSwitch]="field.type"
+         [ngClass]="{'cbContainer': field.type == FieldType.Checkbox}"
+    >
+
+      <!--Text-->
+      <input
+        *ngSwitchCase="FieldType.Text"
+        type="text"
+        class="form-control"
+        [placeholder]="field._label|titlecase"
+        [id]="field.name"
+        [formControlName]="field.name"
+      />
+
+      <!--Number-->
+      <input
+        *ngSwitchCase="FieldType.Number"
+        type="number"
+        class="form-control"
+        [placeholder]="field.label|titlecase"
+        [id]="field.name"
+        [formControlName]="field.name"/>
+
+      <!--Textarea-->
+      <textarea
+        class="form-control"
+        *ngSwitchCase="FieldType.TextArea"
+        [placeholder]="field.label|titlecase"
+        [id]="field.name"
+        [formControlName]="field.name"></textarea>
+
+      <!--Checkbox-->
+      <input
+        *ngSwitchCase="FieldType.Checkbox"
+        type="checkbox"
+        [id]="field.name"
+        [formControlName]="field.name"/>
+
+      <select
+        class="form-control"
+        *ngSwitchCase="FieldType.Select"
+        [formControlName]="field.name"
+        [id]="field.name">
+        <option *ngFor="let option of field.extras.options" [ngValue]="option.value">{{option.label}}</option>
+      </select>
+
+      <!--Radio-->
+      <div
+        *ngSwitchCase="FieldType.Radio"
+      >
+        <div
+          *ngFor="let option of field.extras.options">
+          <input type="radio"
+                 class="radio"
+                 [id]="option.label"
+                 [name]="field.name"
+                 [formControlName]="field.name"
+                 [value]="option.value">
+          <label [for]="option.label"
+                 [ngClass]="{'has-error':
+                      miniFormGroup.controls[field.name].hasError('required') &&
+                      miniFormGroup.controls[field.name].touched}">
+            {{option.label}}
+          </label>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!--Error message-->
+    <div class="alert alert-danger"
+         *ngIf="field.hasErrors() &&
+                  miniFormGroup.controls[field.name].touched &&
+                  getErrorMessages(field).length">
+      <p *ngFor="let error of getErrorMessages(field)">{{error}}</p>
+    </div>
+  </div>
+
+  <button class="btn btn-default" type="submit">Submit</button>
+</form>
