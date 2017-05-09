@@ -108,7 +108,7 @@ model: IMiniFormModel - instance of a class implementing IMiniFormModel
 validate: boolean - flag used to bypass validation if required (form will submit even if invalid)
 onSubmit: fn(populatedModel: IMiniFormModel) - a function receiving the data
 ```
-####MiniFormField
+#### MiniFormField
 
 A form field (input, textarea etc) is generated based on the parameters passed to this object.
 
@@ -123,7 +123,7 @@ extras: any (optional) - extra options like:
                 - translations: {} - translations used for validation messages in the form of 
                 key - value pairs, where key is the validation error (ex: required, minlength) and value is the message to be shown when the field is invalid
 ```
-####FieldType
+#### FieldType
 The type of the field generated is determined by using one of these values.
 
 FieldType enum - specifies the form input type that needs to be rendered
@@ -135,7 +135,7 @@ Checkbox - input type-checkbox
 Select - select - requires options
 Radio - input type-radio - requires options
 ```
-####MiniFormOption
+#### MiniFormOption
 A select or radio option is determined by a MiniFormOption object.
 
 MiniFormOption constructor params
