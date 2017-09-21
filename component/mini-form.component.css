@@ -1,27 +1,23 @@
 input.ng-invalid.ng-touched,
-textarea.ng-invalid.ng-touched{
+textarea.ng-invalid.ng-touched {
   border-left: 5px solid #a94442;
 }
 input.ng-valid.ng-touched,
-textarea.ng-valid.ng-touched{
+textarea.ng-valid.ng-touched {
   border-left: 5px solid #42A948;
 }
-
 select.ng-invalid.ng-touched,
-input[type=checkbox].ng-invalid.ng-touched
-{
+input[type=checkbox].ng-invalid.ng-touched {
   border: 1px solid #a94442;
 }
-select.ng-valid.ng-touched{
+select.ng-valid.ng-touched {
   border: 1px solid #42A948;
 }
-
-.has-error{
+.has-error {
   color: #a94442;
 }
-
 .cbContainer,
-.radio{
+.radio {
   display: inline;
   float: left;
   margin-right: 10px;
