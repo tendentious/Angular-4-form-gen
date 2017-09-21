@@ -12,7 +12,7 @@ import {Translations} from "../data/enTranslations";
 })
 export class MiniFormComponent implements OnInit {
 
-  public FieldType:any = FieldType;
+  private FieldType:any = FieldType;
   private fields:MiniFormField[];
   private miniFormGroup:FormGroup;
   //Model implementing the IMiniFormModel interface that is used to create the form
