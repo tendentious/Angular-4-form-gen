@@ -12,9 +12,9 @@ import {Translations} from "../data/enTranslations";
 })
 export class MiniFormComponent implements OnInit {
 
-  private FieldType:any = FieldType;
-  private fields:MiniFormField[];
-  private miniFormGroup:FormGroup;
+  public FieldType:any = FieldType;
+  public fields:MiniFormField[];
+  public miniFormGroup:FormGroup;
   //Model implementing the IMiniFormModel interface that is used to create the form
   @Input() model: IMiniFormModel;
   //Whether or not the form should post even if invalid
